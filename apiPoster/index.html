@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+
+<form id ="form">
+
+<body onload="getPatients()" target=”_blank”>
+    <div id="message"></div>
+    <p class="title">Select a patient</p>
+    <select name="patients" id="patientList" required>
+        <!-- <option value="default">--Make a Selection--</option> -->
+
+    </select>
+    
+
+    <div id="dayList">
+        <p class = "title">Select a day</p>
+        <input type="hidden" name = "trainer" required>
+        <select name="dayList" id="dayList">
+            <option>--Make a Selection--</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+        </select>
+
+    </div>
+
+        
+        <div onload = "getTrainers()" target=”_blank”>
+            <input type="hidden" name = "trainer" required>    
+            <p class="title">Select a trainer</p>
+            <select name="trainers" id="trainerList" ><br>
+
+            </select>
+
+
+        <div onload = "getServices()" target=”_blank” id = "serviceDuration">
+            <input type="hidden" name = "services" required> 
+            <p class = "title">Select a Service</p>
+            <select name = "service" id = "assistedService">
+
+        </select>
+
+       
+
+        <div id="display"></div>
+            <p class="title">Beginning Date</p>
+            <input type="datetime-local" id="beginningDate" required>
+            
+            <p class="title">Ending Date</p>
+            <input type="datetime-local" id="endingDate" required>
+
+            <button type="submit" id = "appButton">Create Appointments</button>
+
+        
+        </form>
+        
+        <div id="modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close"></span>
+              <h2></h2>
+              <div id="message"></div>
+              <form id="myForm">
+                <!-- Form fields -->
+              </form>
+            </div>
+          </div>
+       
+
+        <script src = "apiPost.js"></script>
+        <script src="index.js"></script>
+
+        
+
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
